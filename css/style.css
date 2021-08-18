@@ -1,0 +1,148 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  /* variables */
+  /* sb: sombra  // cp: cuerpo // ep: elementos del cuerpo */
+  --letra-color: #63cdff;
+  --element-color: #1E1C1C;
+  --dark-box-shadow: -7px -7px 10px -10px #2CFFBA,
+               -4px -4px 5px 0px rgba(255, 255, 255, 0.05),
+                7px 7px 10px 0px rgba(0, 0, 0, 0.5),
+              4px 4px 5px 0px rgba(0, 0, 0, 0.5),
+              inset 0px 0px 0px 0px rgba(255, 255, 255, 0.05),
+              inset 0px 0px 0px 0px rgba(255, 255, 255, 0.05),
+              inset 0px 0px 0px 0px rgba(255, 255, 255, 0.05),
+              inset 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+}
+body {
+  background-color: #041F1E;
+  overflow-x: hidden;
+  background: rgb(17,23,37);
+  background: radial-gradient(circle, rgba(17,23,37,1) 16%, rgba(7,9,14,1) 100%);
+}
+.container-nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 80px;
+  margin-top: 40px;
+  z-index: -1;
+  box-shadow: var(--dark-box-shadow);
+  border-radius: 30px;
+  background-color: #07090e;
+  margin-bottom: 40px;
+  flex-basis: 90%;
+}
+.container-nav h1 {
+  color: #2CFFBA;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.container-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  z-index: 40;
+  align-items: center;
+  flex-basis: 90%;
+  transition: 0.8s ease;
+}
+.cards {
+  flex-basis: 25%;
+  width: 400px;
+  height: 200px;
+  transition: 0.8s ease;
+}
+.cards img {
+  position: relative;
+  margin: 0px;
+  width: 400px;
+  height: 200px;
+  box-shadow: -7px -7px 10px -10px rgba(255, 255, 255, 0.05),
+               -4px -4px 5px 0px rgba(0, 0, 0, 0.5),
+                7px 7px 10px 0px rgba(0, 0, 0, 0.5),
+              4px 4px 5px 0px rgba(44, 255, 186, 0.3),
+              inset 0px 0px 0px 0px rgba(255, 255, 255, 0.05),
+              inset 0px 0px 0px 0px rgba(255, 255, 255, 0.05),
+              inset 0px 0px 0px 0px rgba(255, 255, 255, 0.05),
+              inset 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+}
+img:hover {
+  transform: scale(0.95);
+  transition: 0.5s ease;
+}
+/* ******************************* Responsivo *******************************  */
+@media screen and (max-width: 800px) {
+  .container-nav {
+    max-width: 600px;
+    transition: 0.8s ease !important;
+  }
+  .container-cards {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 500px) {
+  .container-nav h1 {
+    font-size: 20px;
+    transition: 0.8s ease !important;
+  }
+}
+
+/* ******************************* Responsivo *******************************  */
+
+
+/*-------------------- Boton de redes sociales --------------------*/
+.container-button{
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+}
+.button-main{
+  display: none;
+}
+.redes a, .button-secondary label, .redes input {
+  display: block;
+  text-decoration: none;
+  background: #000;
+  color: #fff;
+  width: 1.875rem;
+  height: 1.875rem;
+  line-height: 1.875rem;
+  text-align: center;
+  border-radius: 50%;
+  transition: all 500ms ease;
+}
+.redes a, .redes input{
+  margin-bottom: -0.938rem;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 0.75rem;
+}
+.redes a:hover{
+  background: #00FF2E;
+  color: #000;
+}
+.button-main:checked~ .redes a{
+  margin-bottom: 0.625rem;
+  opacity: 1;
+  visibility: visible;
+}
+/* ~ selecciona el ítem que 
+esté inmediatamente después 
+y todos los siguientes*/
+.button-secondary label{
+  cursor: pointer;
+  background: #000;
+  font-size: 1.25rem;
+}
+.button-main:checked~ .button-secondary label{
+  transform: rotate(135deg);
+  font-size: 1.25rem;
+}
+/*-------------------- Fin de Boton de redes sociales --------------------*/
+
